@@ -9,11 +9,11 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 //Mongo connection
-mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/blogDB", {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
-});
+// mongoose.Promise = global.Promise;
+// mongoose.connect("mongodb://localhost/blogDB", {
+// 	useNewUrlParser: true,
+// 	useUnifiedTopology: true
+// });
 
 // body-parser setup -> pass the request and encode it properly
 app.use(bodyparser.urlencoded({extended: true}));
@@ -25,7 +25,7 @@ routes(app);
 if(process.env.NODE_ENV === "production") {
 	app.use(express.static("../dist"));
 	app.get("*", (req, res) => {
-		res.sendFile(path.resolve((__dirname, "../dist", "index.html"), (err) => {
+		res.sendFile(path.resolve((__dirname, "../dist/index.html"), (err) => {
 			if(err) {
 				res.status(500).send(err)
 			}
