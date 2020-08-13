@@ -25,7 +25,7 @@ routes(app);
 if(process.env.NODE_ENV === "production") {
 	app.use(express.static("../dist"));
 	app.get("*", (req, res) => {
-		res.sendFile(path.resolve((__dirname, "public", "index.html")))
+		res.sendFile(path.resolve((__dirname + "../dist/index.html")))
 	})
 }
 app.get("/", (req, res) =>
