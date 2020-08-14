@@ -10,7 +10,8 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
-		filename: "main.[contentHash].js"
+		filename: "main.[contentHash].js",
+		publicPath: '/',
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.css']
