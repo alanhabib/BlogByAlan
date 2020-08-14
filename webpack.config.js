@@ -14,7 +14,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.css$/,
+				test: /\.scss$/,
 				use: ["style-loader", "css-loader", "sass-loader"]
 			},
 			{
@@ -31,7 +31,19 @@ module.exports = {
 						loader: "html-loader"
 					}
 				]
-			}
+			},
+			{
+				test: /\.(svg|png|jpe?g|gif)$/i,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: "[name].[hash].[ext]",
+							outputPath: "images"
+						}
+					},
+				],
+			},
 		]
 	},
 	optimization: {

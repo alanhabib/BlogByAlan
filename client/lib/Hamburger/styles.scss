@@ -1,0 +1,67 @@
+.nav__toggle {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  //transform: translateX(-100%);
+  background: var(--clr-light);
+  padding: 1em .5em;
+  border-radius: .25em 0 0 .25em;
+  border: none;
+  display: none;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 2em;
+  height: 2px;
+  background: var(--clr-dark);
+  transition: transform 250ms ease-in-out, opacity 200ms linear;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  bottom: 6px;
+}
+
+.hamburger::after {
+  top: 6px;
+}
+
+
+/* Navigation open styles */
+
+.nav-open .nav {
+  transform: translateX(0);
+}
+
+/* Change this stuff below */
+
+.nav-open .hamburger {
+  transform: rotate(45deg);
+}
+
+.nav-open .hamburger::before {
+  opacity: 0;
+}
+
+.nav-open .hamburger::after {
+  transform: rotate(90deg) translate(-6px);
+}
+
+@media screen and (max-width: 900px) {
+  .nav__toggle {
+    display: flex;
+  }
+}

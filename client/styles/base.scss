@@ -1,0 +1,126 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --mainColor: var(--clr-lightGrey);
+  --secondaryColor: #fff;
+
+  --borderColor: #C7C7CC;
+
+  --mainText: var(--clr-dark);
+  --secondaryText: #4b5156;
+
+  --themeDotBorder: #24292e;
+
+  --previewBg: rgba(90, 88, 255, 0.11);
+  --previewShadow: var(--clr-lightGrey);
+
+
+  --buttonColor: var(--clr-dark);
+  --ff-primary: -apple-system, 'Roboto', sans-serif;
+  --ff-secondary: 'Poppins', monospace;
+
+  --fw-reg: 400;
+  --fw-bold: 900;
+
+  // Light mode
+  --clr-blue: rgb(0, 122, 255);
+  --clr-green: rgb(52, 199, 89);
+  --clr-indigo: rgb(88, 86, 214);
+  --clr-orange: rgb(255, 149, 0);
+  --clr-pink: rgb(255, 45, 85);
+  --clr-purple: rgb(175, 82, 222);
+  --clr-red: rgb(255, 59, 48);
+  --clr-teal: rgb(90, 200, 250);
+  --clr-yellow: rgb(255, 204, 0);
+  --clr-dark: rgb(44, 44, 46);
+  --clr-grey: rgb(142, 142, 147);
+  --clr-lightGrey: rgb(242, 242, 247);
+  --clr-secondaryDark: #4b5156;
+  --radius: 8px;
+  --transition: all 0.3s linear;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+  0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, "Roboto", "Helvetica Neue", sans-serif;
+  font-weight: var(--fw-reg);
+  background-color: var(--clr-lightGrey);
+  color: var(--clr-dark);
+  font-size: var(--fs-body);
+  letter-spacing: .4px;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+}
+
+body * {
+  transition: 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  color: var(--mainText);
+  font-family: Didot, 'Russo One', sans-serif;
+  font-weight: bold;
+}
+
+p, li, span, label, input, textarea {
+  color: var(--secondaryText);
+  font-family: -apple-system, 'Roboto', monospace;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-indigo);
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.overlay::before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, transparent 0%, transparent 18%, rgba(0, 0, 0, .8) 99%, rgba(0, 0, 0, .8) 100%);
+}
