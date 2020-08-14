@@ -5,6 +5,7 @@ import {buildDate} from "../../lib/date";
 
 function BlogPostList(props) {
 	let {url} = useRouteMatch();
+	console.log("## PROPS BLOGPOST", props.blogPosts);
 	return (
 		props.blogPosts.map(blogPost => (
 			<div className={"blogPostListContainer"} key={blogPost._id}>

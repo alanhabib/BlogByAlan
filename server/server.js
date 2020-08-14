@@ -9,11 +9,11 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 //Mongo connection
-// mongoose.Promise = global.Promise;
-// mongoose.connect("mongodb://localhost/blogDB", {
-// 	useNewUrlParser: true,
-// 	useUnifiedTopology: true
-// });
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost/blogDB", {
+	useNewUrlParser: true,
+	useUnifiedTopology: true
+});
 
 // body-parser setup -> pass the request and encode it properly
 app.use(bodyparser.urlencoded({extended: true}));

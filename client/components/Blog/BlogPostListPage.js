@@ -5,7 +5,7 @@ function BlogPostListPage(props) {
 	return (
 		<div className={"blogPostListPageWrapper"}>
 			<h1>Blog posts</h1>
-			< BlogPostList {...props}/>
+			<BlogPostList {...props}/>
 		</div>
 	);
 }

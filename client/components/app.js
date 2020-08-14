@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "./Home";
 import BlogPostPage from "./Blog/blogPostPage";
-import Blog from "./Blog/BlogPostListPage"
+import Blog from "./Blog"
 import Project from "./Projects"
 import Contact from "./Contact"
 import NotFoundPage from "./NotFoundPage"
