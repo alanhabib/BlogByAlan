@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCodepen, faGithub, faLinkedinIn} from "@fortawesome/free-brands-svg-icons";
-import image from "../../images/m-blog-4.jpg"
+import image from "../../images/m-blog-5.jpg"
 import {NavLink} from "react-router-dom";
 import Form from "../../components/Form"
 import Header from "../../components/Header";

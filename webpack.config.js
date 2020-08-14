@@ -1,12 +1,16 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const webpack = require('webpack');
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
 	entry: {index: path.resolve(__dirname, "client", "index.js")},
+	devServer: {
+		historyApiFallback: true
+	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
-		filename: "main.js"
+		filename: "main.[contentHash].js"
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.css']
@@ -15,7 +19,11 @@ module.exports = {
 		rules: [
 			{
 				test: /\.scss$/,
-				use: ["style-loader", "css-loader", "sass-loader"]
+				use: [
+					MiniCssExtractPlugin.loader,
+					"css-loader",   // Turns CSS into JS
+					"sass-loader"   // Turns SCSS into CSS
+				]
 			},
 			{
 				test: /\.(js|jsx)$/,
@@ -53,6 +61,7 @@ module.exports = {
 		new HtmlWebPackPlugin({
 			template: path.resolve(__dirname, "public", "index.html"),
 			filename: "./index.html"
-		})
+		}),
+		new MiniCssExtractPlugin()
 	]
 };
